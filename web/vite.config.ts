@@ -4,6 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
 import { codeInspectorPlugin } from 'code-inspector-plugin'
+import { nitro } from 'nitro/vite'
 import vinext from 'vinext'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -92,6 +93,7 @@ export default defineConfig(({ mode }) => {
           createCodeInspectorPlugin(),
           createForceInspectorClientInjectionPlugin(),
           vinext(),
+          nitro(),
         ],
     resolve: {
       alias: {
